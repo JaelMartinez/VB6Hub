@@ -38,15 +38,15 @@ El Hub de Lectura es una aplicación diseñada para organizar y administrar un c
 1. Al iniciar la aplicación, se te presentará el menú principal con diferentes opciones para acceder a las distintas funcionalidades.
 2. Navega por las opciones para ver el catálogo de libros, marcar libros como leídos, recomendados, entre otros.
 
-![Pantalla Principal](C:\Users\Pobrito\Desktop\MegaHubLibros\Imagenes\PantallaPrincipal.png)
+![Pantalla Principal](./images/PantallaPrincipal.png)
 
 3. Selecciona cualquier libro realizar acciones como marcar como leído, agregar a favoritos, etc.
 
-![Detalles del Libro](C:\Users\Pobrito\Desktop\MegaHubLibros\Imagenes\detalles.png)
+![Detalles del Libro](./images/detalles.png)
 
 4. Utiliza el botón de modo oscuro/claro para cambiar el esquema de colores de la aplicación.
 
-![Modo Oscuro](C:\Users\Pobrito\Desktop\MegaHubLibros\Imagenes\sol.png)
+![Modo Oscuro](./images/sol.png)
 
 ## Proceso que seguí para hacerlo
 
@@ -57,8 +57,7 @@ Luego, se comenzó con el diseño de la interfaz de usuario en Visual Basic 6.0,
 Finalmente, se añadieron funcionalidades adicionales como el modo oscuro/claro, y se realizaron pruebas para asegurar el correcto funcionamiento de la aplicación.
 
 ## Diagrama de Entidad-Relación de la Base de Datos
-
-![Diagrama de ER](C:\Users\Pobrito\Desktop\MegaHubLibros\Imagenes\diagrama.png)
+![Diagrama de ER](./images/diagrama.png)
 
 ## Problemas Conocidos
 
