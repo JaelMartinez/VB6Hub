@@ -46,7 +46,7 @@ El Hub de Lectura es una aplicación diseñada para organizar y administrar un c
 
 4. Utiliza el botón de modo oscuro/claro para cambiar el esquema de colores de la aplicación.
 
-![Modo Oscuro](./Imagenes/sol.png)
+![Modo Oscuro](./Imagenes/sol.jpg)
 
 ## Proceso que seguí para hacerlo
 
