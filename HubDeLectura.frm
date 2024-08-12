@@ -215,7 +215,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim conn As ADODB.Connection
+' frmHubDeLectura.frm
 Dim rs As ADODB.Recordset
 Dim isDarkMode As Boolean
 
@@ -249,21 +249,17 @@ Private Sub cmdVerLibrosRecomendados_Click()
     Me.Hide
 End Sub
 
-Private Sub ConnectToDatabase()
-    Set conn = New ADODB.Connection
-    conn.ConnectionString = "Provider=SQLOLEDB;Data Source=DESKTOP-S6JV37M\MSSQLSERVER01;Initial Catalog=HubDeLecturaDB;User ID=Mega;Password=Mega123;"
-    conn.Open
-End Sub
-
 Private Sub Form_Load()
+    ' Conectar a la base de datos utilizando el módulo
     Call ConnectToDatabase
+    
     If conn.State = adStateOpen Then
         MsgBox "Conexión exitosa a la base de datos.", vbInformation, "Conexión"
     Else
         MsgBox "Error al conectar a la base de datos.", vbCritical, "Error"
     End If
     
-    ' Habilitar el ajuste de la imagen al tamaño del control
+    ' Resto de la inicialización del formulario
     Image1.Stretch = True
     Image2.Stretch = True
     Image3.Stretch = True
@@ -284,6 +280,7 @@ Private Sub Form_Load()
     imgtogglemode.Stretch = True
     imgtogglemode.Picture = LoadPicture("C:\Users\Pobrito\Desktop\MegaHubLibros\Imagenes\sol.jpg")
 End Sub
+
 Private Sub imgToggleMode_Click()
     ' Alternar entre los modos
     isDarkMode = Not isDarkMode
@@ -293,21 +290,17 @@ Private Sub imgToggleMode_Click()
     Dim togglePicture As String
 
     If isDarkMode Then
-        ' Configuración para el modo oscuro
-        newBackColor = RGB(43, 43, 43)  ' Gris oscuro
-        newForeColor = RGB(255, 255, 255)  ' Blanco para el texto
+        newBackColor = RGB(43, 43, 43)
+        newForeColor = RGB(255, 255, 255)
         togglePicture = "C:\Users\Pobrito\Desktop\MegaHubLibros\Imagenes\luna.jpg"
     Else
-        ' Configuración para el modo claro
-        newBackColor = RGB(255, 255, 255)  ' Blanco
-        newForeColor = RGB(0, 0, 0)  ' Negro para el texto
+        newBackColor = RGB(255, 255, 255)
+        newForeColor = RGB(0, 0, 0)
         togglePicture = "C:\Users\Pobrito\Desktop\MegaHubLibros\Imagenes\sol.jpg"
     End If
     
-    ' Cambiar la imagen del botón de modo
     imgtogglemode.Picture = LoadPicture(togglePicture)
     
-    ' Asegurarse de cargar todos los formularios en memoria
     Load frmHubDeLectura
     Load GenerosFavoritos
     Load LibrosLeidos
@@ -316,12 +309,10 @@ Private Sub imgToggleMode_Click()
     Load LibrosQueQuieresLeer
     Load LibrosRecomendados
     
-    ' Aplicar colores a todos los formularios
     Dim frm As Form
     For Each frm In Forms
         frm.BackColor = newBackColor
         
-        ' Cambiar el color de los controles en cada formulario
         Dim ctrl As Control
         For Each ctrl In frm.Controls
             If TypeOf ctrl Is Label Or TypeOf ctrl Is TextBox Or TypeOf ctrl Is CommandButton Then
@@ -334,13 +325,7 @@ Private Sub imgToggleMode_Click()
     Next frm
 End Sub
 
-
-
-
 Private Sub Form_Unload(Cancel As Integer)
-    If Not conn Is Nothing Then
-        conn.Close
-        Set conn = Nothing
-    End If
+    Call CloseDatabaseConnection
 End Sub
 

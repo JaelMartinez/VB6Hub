@@ -1,8 +1,8 @@
-frmHubDeLectura = 158, 112, 1495, 751, Z, 76, 114, 1413, 856, C
+frmHubDeLectura = 158, 112, 1495, 751, , 76, 114, 1413, 856, C
 LibrosMega = 117, 115, 1309, 757, C, 87, 5, 1428, 654, C
 LibrosRecomendados = 286, 286, 1511, 928, C, 130, 130, 1467, 772, C
 GenerosFavoritos = 150, 91, 1375, 733, C, 156, 156, 1493, 798, C
 LibrosQueNoTeGustan = 182, 182, 1472, 763, C, 99, 114, 1436, 756, C
 LibrosQueQuieresLeer = 26, 26, 1223, 668, C, 133, 163, 1470, 805, C
-LibrosLeidos = 104, 104, 1301, 746, C, 75, 69, 1417, 710, C
-modConexion = 130, 130, 1348, 772, C
+modConexion = 130, 130, 1348, 772, Z
+LibrosLeidos = 0, 0, 1169, 642, , 312, 312, 1481, 954, C
